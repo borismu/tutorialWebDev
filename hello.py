@@ -4,5 +4,5 @@ def app(environ, start_response):
           ("Content-Type", "text/plain"),
       ])
       qs = environ['QUERY_STRING']
-      data='\n'.join(st.split('&'))
+      data='\n'.join(qs.split('&'))
       return [ data ]
