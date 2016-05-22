@@ -1,0 +1,9 @@
+<ul>
+	{% for q in questions %}
+	<li>
+		<a href="{{ q.get_url }}">
+			{{q}}
+		</a>
+	</li>
+	{% endfor %}
+</ul>

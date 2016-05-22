@@ -1,0 +1,9 @@
+<h1>{{question}}</h1>
+<h2>{{question.text}}</h2>
+<ul>
+	{% for ans in question.answer_set.all %}
+	<li>
+		{{ans.text}}
+	</li>
+	{% endfor %}
+</ul>
