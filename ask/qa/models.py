@@ -16,8 +16,8 @@ class Question(models.Model):
 	text = models.TextField(max_length=200)
 	added_at = models.DateTimeField(auto_now_add=True)
 	rating = models.IntegerField(default=0)
-	author = models.ForeignKey(User, related_name="writtenqs")
-	likes = models.ManyToManyField(User, related_name="likedqs", blank=True)
+	author = models.ForeignKey(User, related_name="writtenqs", blank=True, null=True)
+	likes = models.ManyToManyField(User, related_name="likedqs", blank=True, null=True)
 
 	def get_url(self):
 		return reverse('question_detail',
@@ -30,5 +30,5 @@ class Question(models.Model):
 class Answer(models.Model):
 	text = models.TextField(max_length=200)
 	added_at = models.DateTimeField(auto_now_add=True)
-	author = models.ForeignKey(User)
+	author = models.ForeignKey(User, blank=True)
 	question = models.ForeignKey(Question)

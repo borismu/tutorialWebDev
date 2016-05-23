@@ -7,3 +7,21 @@
 	</li>
 	{% endfor %}
 </ul>
+<br>
+<h1>Answer</h1>
+<form class="form-horizontal" method="post" action="/answer/">
+{% csrf_token %}
+<fieldset>
+{% for field in form %}
+<div class="control-group">
+<label class="control-label">{{ field.label }}</label>
+<div class="controls">{{ field }}</div>
+</div>
+{% endfor %}
+</fieldset>
+<input
+<div class="form-actions">
+<button type="submit" class="btn btn-primary">
+Ответить</button>
+</div>
+</form>
