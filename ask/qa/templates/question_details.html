@@ -14,6 +14,7 @@
 <fieldset>
 {% for field in form %}
 <div class="control-group">
+{% if field %}
 <label class="control-label">{{ field.label }}</label>
 <div class="controls">{{ field }}</div>
 </div>
